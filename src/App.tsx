@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './App.css';
-import { useUserMedia } from './use-user-media';
-import { shuffleItems } from './utils';
+import { useUserMedia } from './hooks/use-user-media';
+import { shuffleItems } from './utils/shuffle';
+import './styles/app.css';
 
 function App() {
 	const [cameraSquares, setCameraSquares] = useState<number[]>(

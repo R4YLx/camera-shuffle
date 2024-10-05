@@ -1,0 +1,23 @@
+:root {
+	--x: 0%;
+	--y: 0%;
+	--rotateY: 0;
+	--rotateX: 0;
+	--background-color: #000;
+	--background-color-active: #d6d5d5;
+	--text-color: #fff;
+}
+
+body {
+	background-color: var(--background-color);
+	color: white;
+	margin: 0;
+}
+
+#root {
+	display: grid;
+	place-content: center;
+	margin-inline: 10%;
+	height: 100dvh;
+	gap: 2rem;
+}

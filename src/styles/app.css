@@ -1,27 +1,3 @@
-:root {
-	--x: 0%;
-	--y: 0%;
-	--rotateY: 0;
-	--rotateX: 0;
-	--background-color-dark: #000;
-	--background-color-active: #d6d5d5;
-	--text-color-dark: #fff;
-}
-
-body {
-	background-color: var(--background-color-dark);
-	color: white;
-	margin: 0;
-}
-
-#root {
-	display: grid;
-	place-content: center;
-	margin-inline: 10%;
-	height: 100dvh;
-	gap: 2rem;
-}
-
 .controls {
 	order: 1;
 	display: flex;
@@ -34,12 +10,12 @@ body {
 	cursor: pointer;
 	color: inherit;
 	background: none;
-	border: 1px solid var(--text-color-dark);
+	border: 1px solid var(--text-color);
 	padding: 1rem 2rem;
 	border-radius: 0.5rem;
 
 	&:hover {
-		background-color: var(--text-color-dark);
+		background-color: var(--text-color);
 		color: black;
 	}
 
@@ -48,7 +24,7 @@ body {
 	}
 
 	&:focus-visible {
-		outline-color: var(--text-color-dark);
+		outline-color: var(--text-color);
 		outline-style: solid;
 		outline-offset: 4px;
 		outline-width: 2px;
