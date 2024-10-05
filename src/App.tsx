@@ -3,17 +3,38 @@ import { useUserMedia } from './hooks/use-user-media';
 import { shuffleItems } from './utils/shuffle';
 import './styles/app.css';
 
+const isDesktop = () => {
+	const userAgent = navigator.userAgent.toLowerCase();
+	return /windows|macintosh|linux/.test(userAgent);
+};
+
+const desktopConstraints = {
+	video: {
+		width: 1920,
+		height: 1080,
+	},
+	audio: false,
+};
+
+const mobileConstraints = {
+	video: {
+		width: 1280,
+		height: 720,
+		facingMode: 'user',
+	},
+	audio: false,
+};
+
+const constraints = isDesktop() ? desktopConstraints : mobileConstraints;
+
 function App() {
 	const [cameraSquares, setCameraSquares] = useState<number[]>(
 		Array.from({ length: 16 }, (_, index) => index + 1)
 	);
 
-	const { stream, error } = useUserMedia({
-		video: {
-			width: 1920,
-			height: 1080,
-		},
-	});
+	const { stream, error } = useUserMedia(constraints);
+
+	console.log(`🍌 isDesktop() 🍌`, isDesktop());
 
 	function onClickRandomize() {
 		document.startViewTransition(() => {
@@ -54,6 +75,7 @@ function App() {
 							className='output'
 							autoPlay
 							muted
+							playsInline
 							ref={(video) => {
 								if (video) {
 									video.srcObject = stream;
