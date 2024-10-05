@@ -10,14 +10,14 @@ const isDesktop = () => {
 
 const desktopConstraints = {
 	video: {
-		width: 1920,
-		height: 1080,
+		width: { min: 1280, ideal: 1920, max: 2560 },
+		height: { min: 720, ideal: 1080, max: 1440 },
 	},
 	audio: false,
 } satisfies MediaStreamConstraints;
 
 const mobileConstraints = {
-	video: { aspectRatio: { exact: 4 / 3 }, facingMode: { exact: 'user' } },
+	video: { aspectRatio: 4 / 3, height: 720, facingMode: { exact: 'user' } },
 	audio: false,
 } satisfies MediaStreamConstraints;
 
