@@ -17,7 +17,7 @@ function App() {
 		});
 	}
 
-	function onClickOrder() {
+	function onClickReset() {
 		document.startViewTransition(() => {
 			setCameraSquares((prevCameraSquares) =>
 				[...prevCameraSquares].sort((a, b) => a - b)
@@ -32,8 +32,8 @@ function App() {
 					Randomize
 				</button>
 
-				<button className='button' onClick={onClickOrder}>
-					Order
+				<button className='button' onClick={onClickReset}>
+					Reset
 				</button>
 			</div>
 
