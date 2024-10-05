@@ -17,11 +17,7 @@ const desktopConstraints = {
 };
 
 const mobileConstraints = {
-	video: {
-		width: 1280,
-		height: 720,
-		facingMode: 'user',
-	},
+	video: true,
 	audio: false,
 };
 
@@ -33,8 +29,6 @@ function App() {
 	);
 
 	const { stream, error } = useUserMedia(constraints);
-
-	console.log(`🍌 isDesktop() 🍌`, isDesktop());
 
 	function onClickRandomize() {
 		document.startViewTransition(() => {
