@@ -1,0 +1,141 @@
+:root {
+	--x: 0%;
+	--y: 0%;
+	--rotateY: 0;
+	--rotateX: 0;
+	--background-color-dark: #000;
+	--background-color-active: #d6d5d5;
+	--text-color-dark: #fff;
+}
+
+body {
+	background-color: var(--background-color-dark);
+	color: white;
+	margin: 0;
+}
+
+#root {
+	display: grid;
+	place-content: center;
+	margin-inline: 10%;
+	height: 100dvh;
+	gap: 2rem;
+}
+
+.controls {
+	order: 1;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	text-align: center;
+}
+
+.button {
+	cursor: pointer;
+	color: inherit;
+	background: none;
+	border: 1px solid var(--text-color-dark);
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+
+	&:hover {
+		background-color: var(--text-color-dark);
+		color: black;
+	}
+
+	&:active {
+		background-color: var(--background-color-active);
+	}
+
+	&:focus-visible {
+		outline-color: var(--text-color-dark);
+		outline-style: solid;
+		outline-offset: 4px;
+		outline-width: 2px;
+	}
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-gap: 0.125rem;
+	margin-inline: auto;
+}
+
+::view-transition-group(*.item) {
+	animation-duration: 420ms;
+	animation-timing-function: cubic-bezier(1, -0.62, 0.61, 1.37);
+}
+
+.item {
+	view-transition-class: item;
+	overflow: hidden;
+	align-content: center;
+	grid-column: span 2;
+	grid-row: span 2;
+	aspect-ratio: 1;
+
+	--x: 0%;
+	--y: 0%;
+	--rotateY: 0;
+	--rotateX: 0;
+	transform: rotateY(var(--rotateY)) rotateX(var(--rotateX));
+
+	&.item2,
+	&.item6,
+	&.item10,
+	&.item14 {
+		--x: -25%;
+	}
+
+	&.item3,
+	&.item7,
+	&.item11,
+	&.item15 {
+		--x: -50%;
+	}
+
+	&.item4,
+	&.item8,
+	&.item12,
+	&.item16 {
+		--x: -75%;
+	}
+
+	&.item5,
+	&.item6,
+	&.item7,
+	&.item8 {
+		--y: -25%;
+	}
+
+	&.item9,
+	&.item10,
+	&.item11,
+	&.item12 {
+		--y: -50%;
+	}
+
+	&.item13,
+	&.item14,
+	&.item15,
+	&.item16 {
+		--y: -75%;
+	}
+}
+
+.output {
+	width: 400%;
+	height: 400%;
+	object-fit: cover;
+	margin: 0;
+	padding: 0;
+	transform: translate(var(--x), var(--y));
+}
+
+@media (min-width: 768px) {
+	.grid {
+		grid-gap: 0.25rem;
+		width: 80%;
+	}
+}
