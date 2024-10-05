@@ -43,3 +43,7 @@ This project is a fun experiment with the [View Transitions API](https://develop
 ## Deployed Version
 
 You can access the live version of the project [here](https://camera-shuffle.netlify.app/).
+
+## Known Issues
+
+There is a known bug where the capture does not take the full height on mobile devices. Solutions and suggestions for fixing this issue are welcomed.
