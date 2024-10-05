@@ -39,3 +39,7 @@ This project is a fun experiment with the [View Transitions API](https://develop
 1. Open `http://localhost:5173` in a web browser.
 2. Allow the browser to access your media devices when prompted.
 3. Enjoy experimenting with view transitions and media streams.
+
+## Deployed Version
+
+You can access the live version of the project [here](camera-shuffle.netlify.app).
