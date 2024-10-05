@@ -6,6 +6,7 @@
 	--background-color: #000;
 	--background-color-active: #d6d5d5;
 	--text-color: #fff;
+	--error-color: #ff0000;
 }
 
 body {
